@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>White Rabit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="fullwrap">
+        <aside class="sidebar text-center">
+            <div class="row-3">
+                <img src="images/rabbit.png">
+            </div>
+            <div class="row-3">
+                <a href="javascript:void(0)" onclick="openNav()"><img src="images/menu.png"></a>
+            </div>
+            <div class="row-3 position-relative bottom-sec">
+                <p id="changeP" class="color-white transform-270" onchange="scroll">Home</p>
+            </div>
+        </aside>
+        <section id="section" class="landingcontent">
+            <article id="home" class="banner">
+                <img src="images/banner.png">
+             </article>
+             <article id="technologies" class="banner">
+                    <img src="images/banner.png">
+            </article>
+        </section>
+    </div>
+    <div id="myNav" class="overlay" style="width: 0%;">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a class="hvr-underline-from-left" href="/">Portfolio</a>
+            <a class="hvr-underline-from-left" href="/lab/">Tech Lab</a>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    /* Open when someone clicks on the span element */
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+
+    /* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    // scroll
+
+    var changeP = document.getElementById('changeP');
+    var articleHome = document.getElementById('home').id;
+    var articleTec = document.getElementById('technologies').id;
+    console.log(articleHome);
+    console.log(articleTec);
+    window.onscroll = function() {
+        scroll()
+        };
+        
+    function scroll() {
+        if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+        var inputs = document.getElementsByTagName("article");
+            for (var i = 0; i < inputs.length; i++) {
+            if(inputs[i] === home){
+                var changes = changeP.innerHTML = inputs[0];
+                console.log(changes);
+            }
+            else {
+           
+        }
+        } 
+    }
+    }
+</script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script> -->
+</html>
